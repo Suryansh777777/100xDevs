@@ -8,7 +8,9 @@ interface User {
   // For a profile display, only pick `name` and `email`
   type UserProfile = Pick<User, 'name' | 'email'>;
   
-  const displayUserProfile = (user: UserProfile) => {
+  type UserProfilePartial = Partial<UserProfile>;
+
+  const displayUserProfile = (user: UserProfilePartial) => {
     console.log(`Name: ${user.name}, Email: ${user.email}`);
   };
   
