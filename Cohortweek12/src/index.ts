@@ -105,10 +105,12 @@ const userProfileSchema = z.object({
   email: z.string().email({ message: "Invalid email format" }),
   age: z.number().min(18, { message: "You must be at least 18 years old" }).optional(),
 });
+//z.infer is used to get the type of the schema its a runtime type
+type FinalUserSchema = z.infer<typeof userProfileSchema>;
 
 app.put("/user", (req, res) => {
   const { success } = userProfileSchema.safeParse(req.body);
-  const updateBody = req.body; // how to assign a type to updateBody?
+  const updateBody:FinalUserSchema = req.body; // how to assign a type to updateBody?
 
   if (!success) {
     res.status(411).json({});
