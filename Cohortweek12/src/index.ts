@@ -20,28 +20,52 @@
 //     });
 
 //One way
-type User = {
-    readonly id: number;
-    readonly name: string;
-    readonly email: string;
-}
+// type User = {
+//     readonly id: number;
+//     readonly name: string;
+//     readonly email: string;
+// }
 
-const user: User = {
-    id: 1,
-    name: 'John Doe',
-    email: 'johndoe@asda'
-}
+// const user: User = {
+//     id: 1,
+//     name: 'John Doe',
+//     email: 'johndoe@asda'
+// }
 
 //Another way
  
-type Company = {
-     id: number;
-     name: string;
-     email: string;
+// type Company = {
+//      id: number;
+//      name: string;
+//      email: string;
+// }
+
+// const company: Readonly<Company> = {
+//     id: 1,
+//     name: 'John Doe',
+//     email: 'johndoe@asda'
+// }
+
+type User   = { 
+    id:number
+    username: string;
 }
 
-const company: Readonly<Company> = {
-    id: 1,
-    name: 'John Doe',
-    email: 'johndoe@asda'
+//Traditional way
+type Users= {
+    [key : string]: User        
+}
+
+//Record Way
+type UsersRecord = Record<string, User>
+
+const users:Users = {
+    "ras@asd":{
+        id: 1,
+        username: 'John Doe',
+    },
+    "ras1@asd":{
+        id: 2,
+        username: 'John Doe',
+    },
 }
