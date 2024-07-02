@@ -1,8 +1,14 @@
 "use strict";
-const displayUserProfile = (user) => {
-    console.log(`Name: ${user.name}, Email: ${user.email}`);
-};
-displayUserProfile({
-    name: 'John Doe',
-    email: 'johnde@asda'
-});
+// interface User {
+//     id: number;
+//     name: string;
+//     email: string;
+//     createdAt: Date;
+//   }
+// Initialize an empty Map
+const usersMap = new Map();
+// Add users to the map using .set
+usersMap.set('abc123', { id: 'abc123', name: 'John Doe' });
+usersMap.set('xyz789', { id: 'xyz789', name: 'Jane Doe' });
+// Accessing a value using .get
+console.log(usersMap.get('abc123')); // Output: { id: 'abc123', name: 'John Doe' }

@@ -46,26 +46,41 @@
 //     email: 'johndoe@asda'
 // }
 
-type User   = { 
-    id:number
-    username: string;
-}
+// type User   = { 
+//     id:number
+//     username: string;
+// }
 
-//Traditional way
-type Users= {
-    [key : string]: User        
-}
+// //Traditional way
+// type Users= {
+//     [key : string]: User        
+// }
 
-//Record Way
-type UsersRecord = Record<string, User>
+// //Record Way
+// type UsersRecord = Record<string, User>
 
-const users:Users = {
-    "ras@asd":{
-        id: 1,
-        username: 'John Doe',
-    },
-    "ras1@asd":{
-        id: 2,
-        username: 'John Doe',
-    },
-}
+// const users:Users = {
+//     "ras@asd":{
+//         id: 1,
+//         username: 'John Doe',
+//     },
+//     "ras1@asd":{
+//         id: 2,
+//         username: 'John Doe',
+//     },
+// }
+
+interface User1 {
+    id: string;
+    name: string;
+  }
+  
+  // Initialize an empty Map
+  const usersMap = new Map<string, User1>();
+  
+  // Add users to the map using .set
+  usersMap.set('abc123', { id: 'abc123', name: 'John Doe' });
+  usersMap.set('xyz789', { id: 'xyz789', name: 'Jane Doe' });
+  
+  // Accessing a value using .get
+  console.log(usersMap.get('abc123')); // Output: { id: 'abc123', name: 'John Doe' }
